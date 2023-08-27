@@ -1,0 +1,12 @@
+<span>Business Layout</span>
+<div class="text-right flex-auto">
+  <span *ngIf="service.user()">
+    <button>{{ service.user()?.email | uppercase }}</button>
+    <button>Business</button>
+    <button>Logout</button>
+  </span>
+  <span *ngIf="!service.user()">
+    <span>Login</span>
+  </span>
+</div>
+<ng-content></ng-content>
