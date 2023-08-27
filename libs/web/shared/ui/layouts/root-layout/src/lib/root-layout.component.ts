@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '@irmbs/web/auth/domain';
+import { APP_AUTH_SIGNAL, AuthService } from '@irmbs/web/auth/domain';
 
 @Component({
   selector: 'asingle-root-layout',
@@ -12,8 +12,12 @@ import { AuthService } from '@irmbs/web/auth/domain';
 })
 export class RootLayoutComponent {
   constructor(
-    protected service: AuthService,
+    @Inject(APP_AUTH_SIGNAL) protected service: AuthService,
     protected route: ActivatedRoute,
-    protected router: Router,
-  ) {}
+    protected router: Router
+  ) {
+    console.log(
+      'RootLayoutComponent Constructor: AuthService.id:' + service.id
+    );
+  }
 }

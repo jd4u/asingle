@@ -3,9 +3,9 @@ import { Injectable, signal } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class AppState {
   token = signal<string | null>(null);
-
+  id:string=Date.now().toLocaleString();
   constructor() {
-    console.log('AppState Constructor:' + Date.now().toLocaleString());
+    console.log('AppState Constructor:' + this.id);
     console.trace();
   }
 

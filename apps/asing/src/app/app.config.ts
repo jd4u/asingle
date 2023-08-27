@@ -8,7 +8,7 @@ import { appRoutes } from './app.routes';
 import {APP_AUTH_SIGNAL, APP_LOCAL_STORAGE, AuthService, JwtLocalStorageService, authFactory} from '@irmbs/web/auth/domain';
 
 const appTokenProviders = [
-  { provide: APP_AUTH_SIGNAL, useClass: AuthService},
+  { provide: APP_AUTH_SIGNAL, useClass: AuthService, multi:false},
   { provide: APP_LOCAL_STORAGE, useClass: JwtLocalStorageService},
 ];
 

@@ -6,8 +6,9 @@ import { Authenticate, User } from './dto';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  id:string=Date.now().toLocaleString();
   constructor(private storage: JwtLocalStorageService) {
-    console.log('AuthService Constructor:' + Date.now().toLocaleString());
+    console.log('AuthService Constructor:' + this.id);
     console.trace();
   }
 
